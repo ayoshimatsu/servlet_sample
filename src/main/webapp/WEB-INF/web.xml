@@ -1,0 +1,86 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!-- sample_simpleServlet -->
+  <servlet>
+    <servlet-name>sample</servlet-name>
+    <servlet-class>com.sample_simpleServlet.SampleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sample</servlet-name>
+    <url-pattern>/sample</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>sampleFormat</servlet-name>
+    <servlet-class>com.sample_simpleServlet.FormSampleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sampleFormat</servlet-name>
+    <url-pattern>/sampleFormat</url-pattern>
+  </servlet-mapping>
+
+  <!-- sample_forwardServlet-->
+  <servlet>
+    <servlet-name>forwardSample</servlet-name>
+    <servlet-class>com.sample_forwardServlet.ForwardSampleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>forwardSample</servlet-name>
+    <url-pattern>/forwardSample</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>redirectSample</servlet-name>
+    <servlet-class>com.sample_forwardServlet.RedirectSampleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>redirectSample</servlet-name>
+    <url-pattern>/redirectSample</url-pattern>
+  </servlet-mapping>
+
+  <!-- sample_requestScope -->
+  <servlet>
+    <servlet-name>healthCheckSample</servlet-name>
+    <servlet-class>com.sample_requestScopeServlet.HealthCheck</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>healthCheckSample</servlet-name>
+    <url-pattern>/healthCheckSample</url-pattern>
+  </servlet-mapping>
+
+  <!-- sample_sessionScope -->
+  <servlet>
+    <servlet-name>registerUserSample</servlet-name>
+    <servlet-class>com.sample_sessionScopeServlet.RegisterUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>registerUserSample</servlet-name>
+    <url-pattern>/registerUserSample</url-pattern>
+  </servlet-mapping>
+
+  <!-- sample_application -->
+  <servlet>
+    <servlet-name>applicationSample</servlet-name>
+    <servlet-class>com.sample_applicationScopeServlet.MinatoIndex</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>applicationSample</servlet-name>
+    <url-pattern>/applicationSample</url-pattern>
+  </servlet-mapping>
+
+  <!-- sample_develop -->
+  <servlet>
+    <servlet-name>developSample</servlet-name>
+    <servlet-class>com.sample_developServlet.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>developSample</servlet-name>
+    <url-pattern>/developSample</url-pattern>
+  </servlet-mapping>
+
+</web-app>
