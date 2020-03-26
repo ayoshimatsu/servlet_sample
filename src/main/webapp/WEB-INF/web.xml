@@ -75,12 +75,30 @@
 
   <!-- sample_develop -->
   <servlet>
-    <servlet-name>developSample</servlet-name>
+    <servlet-name>developLogin</servlet-name>
     <servlet-class>com.sample_developServlet.Login</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>developSample</servlet-name>
-    <url-pattern>/developSample</url-pattern>
+    <servlet-name>developLogin</servlet-name>
+    <url-pattern>/developLogin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>developMain</servlet-name>
+    <servlet-class>com.sample_developServlet.Main</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>developMain</servlet-name>
+    <url-pattern>/developMain</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>developLogout</servlet-name>
+    <servlet-class>com.sample_developServlet.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>developLogout</servlet-name>
+    <url-pattern>/developLogout</url-pattern>
   </servlet-mapping>
 
 </web-app>

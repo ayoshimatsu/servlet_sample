@@ -14,8 +14,8 @@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
     <h1>Login to mutter page</h1>
     <% if (loginUser != null) { %>
         <p>Succeeded in login</p>
-        <p>Welcome<%= loginUser.getName() %></p>
-        <a href="/servlet_sample/">Mutter page</a>
+        <p>Welcome <%= loginUser.getName() %></p>
+        <a href="/servlet_sample/developMain">Mutter page</a>
     <% } else { %>
         <p>Failed to login</p>
         <a href="/servlet_sample/">TOP</a>
