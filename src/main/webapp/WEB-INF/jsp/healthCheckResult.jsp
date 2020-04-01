@@ -1,11 +1,7 @@
-<%@
-page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" import="com.sample_requestScopeModel.Health"
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page isELIgnored="false" %>
 
-<%
-Health health = (Health)request.getAttribute("health");
-%>
+<!-- import="com.sample_requestScopeModel.Health" -->
 
 <!DOCTYPE html>
 <html>
@@ -16,10 +12,10 @@ Health health = (Health)request.getAttribute("health");
 <body>
     <h1>Health check result</h1>
     <p>
-        Height:<%= health.getHeight() %><br>
-        Weight:<%= health.getWeight() %><br>
-        BMI:<%= health.getBmi() %><br>
-        BodyType:<%= health.getBodyType() %>
+        Height:${health.height}<br>
+        Weight:${health.weight}<br>
+        BMI:${health.bmi}<br>
+        BodyType:${health.bodyType}
     </p>
     <a href="/servlet_sample/healthCheckSample">Back</a>
 </body>

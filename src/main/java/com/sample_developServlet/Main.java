@@ -1,5 +1,6 @@
 package com.sample_developServlet;
 
+import com.sample_developModel.GetMutterListLogic;
 import com.sample_developModel.Mutter;
 import com.sample_developModel.PostMutterLogic;
 import com.sample_developModel.User;
@@ -18,13 +19,9 @@ import java.util.List;
 public class Main extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest aRequest, HttpServletResponse aResponse) throws ServletException, IOException {
-        ServletContext application = this.getServletContext();
-        List<Mutter> mutterList = (List<Mutter>)application.getAttribute("mutterList");
-
-        if (mutterList == null) {
-            mutterList = new ArrayList<>();
-            application.setAttribute("mutterList", mutterList);
-        }
+        GetMutterListLogic getMutterListLogic = new GetMutterListLogic();
+        List<Mutter> mutterList = getMutterListLogic.execute();
+        aRequest.setAttribute("mutterList", mutterList);
 
         HttpSession session = aRequest.getSession();
         User loginUser = (User) session.getAttribute("loginUser");
@@ -43,20 +40,19 @@ public class Main extends HttpServlet {
         String text = aRequest.getParameter("text");
 
         if (text != null && text.length() != 0) {
-            ServletContext application = this.getServletContext();
-            List<Mutter> mutterList = (List<Mutter>)application.getAttribute("mutterList");
-
             HttpSession session = aRequest.getSession();
             User loginUser = (User)session.getAttribute("loginUser");
 
             Mutter mutter = new Mutter(loginUser.getName(), text);
             PostMutterLogic postMutterLogic = new PostMutterLogic();
-            postMutterLogic.execute(mutter, mutterList);
-
-            application.setAttribute("mutterList", mutterList);
+            postMutterLogic.execute(mutter);
         } else {
             aRequest.setAttribute("errorMsg", "text is not inputted.");
         }
+
+        GetMutterListLogic getMutterListLogic = new GetMutterListLogic();
+        List<Mutter> mutterList = getMutterListLogic.execute();
+        aRequest.setAttribute("mutterList", mutterList);
 
         RequestDispatcher dispatcher = aRequest.getRequestDispatcher("/WEB-INF/jsp/develop/main.jsp");
         dispatcher.forward(aRequest, aResponse);

@@ -20,7 +20,7 @@ public class FormSampleServlet extends HttpServlet {
             errorMessage += "Name is empty<br>";
         }
         if (gender == null || gender.length() == 0) {
-            errorMessage += "Gender is empty<br";
+            errorMessage += "Gender is empty<br>";
         } else {
             if (gender.equals("0")) {gender = "Male";}
             else if (gender.equals("1")) {gender = "Female";}

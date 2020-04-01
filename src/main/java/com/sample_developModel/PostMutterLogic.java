@@ -1,9 +1,10 @@
 package com.sample_developModel;
 
-import java.util.List;
+import com.sample_developDao.MutterDAO;
 
 public class PostMutterLogic {
-    public void execute(Mutter mutter, List<Mutter> mutterList) {
-        mutterList.add(0, mutter);
+    public void execute(Mutter mutter) {
+        MutterDAO dao = new MutterDAO();
+        dao.create(mutter);
     }
 }
