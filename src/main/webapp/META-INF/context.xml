@@ -2,7 +2,7 @@
 <Context displayName="Teach Yourself Java" path="/servlet_sample" reloadable="true">
     <Resource name="testSample" auth="Container" type="javax.sql.DataSource"
         maxTotal="100" maxActive="4" maxIdle="30" maxWaitMillis="5000"
-        username="???" password="???"
+        username="?" password="?"
         driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/testSample"
         validationQuery="SELECT count(*) FROM account" />
 </Context>

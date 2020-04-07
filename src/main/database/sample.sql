@@ -1,7 +1,0 @@
-CREATE TABLE music(
-    id INTEGER NOT NULL AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    title VARCHAR(50) NOT NULL,
-    year INTEGER(4) NOT NULL,
-    PRIMARY KEY(id)
-);
